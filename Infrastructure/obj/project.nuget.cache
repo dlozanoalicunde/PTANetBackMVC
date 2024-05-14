@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "LWKPocokB/SXtGLyK0m6uuwA4lLCA8gHWnG5wRX8XwNSms65icC5Hfs1Y2CHPjYQCWlC8jg+mPuKHej42gq3pg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Infrastructure\\Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\julio\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\julio\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

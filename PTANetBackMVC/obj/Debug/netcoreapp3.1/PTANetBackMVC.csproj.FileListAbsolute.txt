@@ -1,0 +1,9 @@
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\obj\Debug\netcoreapp3.1\PTANetBackMVC.csprojAssemblyReference.cache
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\obj\Debug\netcoreapp3.1\PTANetBackMVC.AssemblyInfoInputs.cache
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\obj\Debug\netcoreapp3.1\PTANetBackMVC.AssemblyInfo.cs
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\obj\Debug\netcoreapp3.1\PTANetBackMVC.RazorTargetAssemblyInfo.cache
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\obj\Debug\netcoreapp3.1\staticwebassets\PTANetBackMVC.StaticWebAssets.Manifest.cache
+C:\Users\julio\source\repos\PTANetBackMVC\PTANetBackMVC\obj\Debug\netcoreapp3.1\staticwebassets\PTANetBackMVC.StaticWebAssets.xml
