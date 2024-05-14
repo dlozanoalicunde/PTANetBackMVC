@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTANetBackMVC", "PTANetBackMVC.csproj", "{166BCA81-2BA4-42C1-A251-DBF0C55A5093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{34CD4579-D79E-4366-A09A-DD8854CF4A18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTANetBackMVC_Infrastructure", "..\Infrastructure\PTANetBackMVC_Infrastructure.csproj", "{34CD4579-D79E-4366-A09A-DD8854CF4A18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{F6FAF3C6-916F-473D-87D0-8324DF7A78EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTANetBackMVC_Domain", "..\Domain\PTANetBackMVC_Domain.csproj", "{F6FAF3C6-916F-473D-87D0-8324DF7A78EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTANetBackMVC_Helper", "..\PTANetBackMVC_Helper\PTANetBackMVC_Helper.csproj", "{29D77003-F5FF-41D6-945A-F65203582E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTANetBackMVC_NUnitTest", "..\PTANetBackMVC_NUnitTest\PTANetBackMVC_NUnitTest.csproj", "{A07D1D83-A376-4A88-AC27-83453E929CA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{F6FAF3C6-916F-473D-87D0-8324DF7A78EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6FAF3C6-916F-473D-87D0-8324DF7A78EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6FAF3C6-916F-473D-87D0-8324DF7A78EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D77003-F5FF-41D6-945A-F65203582E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D77003-F5FF-41D6-945A-F65203582E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D77003-F5FF-41D6-945A-F65203582E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D77003-F5FF-41D6-945A-F65203582E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07D1D83-A376-4A88-AC27-83453E929CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07D1D83-A376-4A88-AC27-83453E929CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07D1D83-A376-4A88-AC27-83453E929CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07D1D83-A376-4A88-AC27-83453E929CA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

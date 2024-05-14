@@ -186,9 +186,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Domain\\Domain.csproj",
-      "projectName": "Domain",
-      "projectPath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Domain\\PTANetBackMVC_Domain.csproj",
+      "projectName": "PTANetBackMVC_Domain",
+      "projectPath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Domain\\PTANetBackMVC_Domain.csproj",
       "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Domain\\obj\\",
       "projectStyle": "PackageReference",

@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Infrastructure\\PTANetBackMVC_Infrastructure.csproj",
-      "projectName": "PTANetBackMVC_Infrastructure",
-      "projectPath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Infrastructure\\PTANetBackMVC_Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\PTANetBackMVC_Helper\\PTANetBackMVC_Helper.csproj",
+      "projectName": "PTANetBackMVC_Helper",
+      "projectPath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\PTANetBackMVC_Helper\\PTANetBackMVC_Helper.csproj",
       "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\PTANetBackMVC_Helper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

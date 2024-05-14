@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KSCa50r2V0YulxzM9V3rGO6YEXuOd0AUjQLgwMK25KNm8D+/qrQO81WonC7OYpx+mvpCMgfAkZkih75GTm2QrQ==",
+  "dgSpecHash": "zeBozwjcdH7fCqNsyZGpCSse7an7EDVUd2oUSlbOoGIRfP8sio6aYi4JnEn3c6HAEo0phQSxpBEqyAEfogazcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\Domain\\PTANetBackMVC_Domain.csproj",
+  "projectFilePath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\PTANetBackMVC_Helper\\PTANetBackMVC_Helper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\julio\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\julio\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
