@@ -12,7 +12,7 @@
 
         public BankRepository(BankservicedbMdfContext dbContext)
         {
-            _dbContext = dbContext;
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         public async Task Add(BankDto bank)

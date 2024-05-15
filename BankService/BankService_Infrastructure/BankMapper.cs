@@ -3,11 +3,11 @@
     using BankService_Domain.Models;
     using BankService_Helper.DTO;
 
-    public static class BankMapper
+    internal static class BankMapper
     {
         public static BankDto ToDto(Bank entity)
         {
-            BankDto dto = new BankDto
+            BankDto dto = new()
             {
                 Id = entity.Id,
                 Bic = entity.Bic,
@@ -20,7 +20,7 @@
 
         public static Bank ToEntity(BankDto dto)
         {
-            Bank bank = new Bank()
+            Bank bank = new()
             {
                 Bic = dto.Bic,
                 Country = dto.Country,

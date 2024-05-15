@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankService_Application", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankService_Helper", "BankService_Helper\BankService_Helper.csproj", "{A84ED618-D585-4075-9B56-999AC83FC5A0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{0FB1368A-3F17-4842-AC03-A9EF7F5FC97C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankService_UnitTest", "BankService_UnitTest\BankService_UnitTest.csproj", "{A87AB01F-8F68-468D-A625-746AFEB057C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{A84ED618-D585-4075-9B56-999AC83FC5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A84ED618-D585-4075-9B56-999AC83FC5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A84ED618-D585-4075-9B56-999AC83FC5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A87AB01F-8F68-468D-A625-746AFEB057C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87AB01F-8F68-468D-A625-746AFEB057C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87AB01F-8F68-468D-A625-746AFEB057C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87AB01F-8F68-468D-A625-746AFEB057C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A87AB01F-8F68-468D-A625-746AFEB057C6} = {0FB1368A-3F17-4842-AC03-A9EF7F5FC97C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A084DC6-3896-4643-9C7E-0A7769AC2D13}
