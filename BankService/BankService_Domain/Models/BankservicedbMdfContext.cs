@@ -1,4 +1,9 @@
-﻿namespace BankService_Domain.Models;
+﻿/************************************************************************************************************
+ * Julio's tech test for Alicunde Job position
+ ************************************************************************************************************/
+
+
+namespace BankService_Domain.Models;
 
 using Microsoft.EntityFrameworkCore;
 

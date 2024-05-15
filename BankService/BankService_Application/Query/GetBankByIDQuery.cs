@@ -1,4 +1,8 @@
-﻿namespace BankService_Application.Query
+﻿/************************************************************************************************************
+ * Julio's tech test for Alicunde Job position
+ ************************************************************************************************************/
+
+namespace BankService_Application.Query
 {
     using BankService_Helper.DTO;
     using MediatR;

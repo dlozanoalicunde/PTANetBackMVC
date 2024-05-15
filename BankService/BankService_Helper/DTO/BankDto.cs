@@ -1,4 +1,9 @@
-﻿namespace BankService_Helper.DTO
+﻿/************************************************************************************************************
+ * Julio's tech test for Alicunde Job position
+ ************************************************************************************************************/
+
+
+namespace BankService_Helper.DTO
 {
     /// <summary>
     /// DTO class for bank entity
