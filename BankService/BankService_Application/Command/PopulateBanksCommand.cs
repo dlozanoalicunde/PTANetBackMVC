@@ -2,6 +2,9 @@
 {
     using MediatR;
 
+    /// <summary>
+    /// command request class for populate bank business
+    /// </summary>
     public class PopulateBanksCommand : IRequest<bool>
     {
         public string BanksApiSource { get; }

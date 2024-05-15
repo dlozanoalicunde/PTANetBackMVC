@@ -7,15 +7,28 @@
     using BankService_Helper.DTO;
     using MediatR;
 
+    /// <summary>
+    /// Request command hablder class for pupulate banks logic
+    /// </summary>
     public class PopulateBanksCommandHandler : IRequestHandler<PopulateBanksCommand, bool>
     {
         private readonly IBankRepository _bankRepository;
 
+        /// <summary>
+        /// Primary constructor
+        /// </summary>
+        /// <param name="bankRepository"></param>
         public PopulateBanksCommandHandler(IBankRepository bankRepository)
         {
             _bankRepository = bankRepository;
         }
 
+        /// <summary>
+        /// Handler method to resolve populate bank logic
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task<bool> Handle(PopulateBanksCommand request, CancellationToken cancellationToken)
         {
             ComunicationManager.Init(request.BanksApiSource);

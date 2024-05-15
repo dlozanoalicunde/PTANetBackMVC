@@ -7,17 +7,29 @@
     using MediatR;
     using Microsoft.AspNetCore.Mvc;
 
+    /// <summary>
+    /// Bank Api controller
+    /// </summary>
     [ApiController]
     [Route("api/Banks")]
     public class BankController : Controller
     {
         private readonly IMediator _mediator;
 
+        /// <summary>
+        /// Primary constructor
+        /// </summary>
+        /// <param name="mediator"></param>
         public BankController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Getter method to return bank by his id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{bankId}")]
         [ProducesResponseType(typeof(BankDto), (int)HttpStatusCode.OK)]
@@ -28,6 +40,11 @@
             return Ok(result);
         }
 
+        /// <summary>
+        /// Post method to insert a bank into DB
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.Created)]
@@ -38,6 +55,10 @@
             return Created(string.Empty, result);
         }
 
+        /// <summary>
+        /// Post method to populate bank Db from another web api
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [Route("populate")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.Created)]

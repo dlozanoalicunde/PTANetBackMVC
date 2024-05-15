@@ -5,8 +5,15 @@
     using BankService_Application.Managers;
     using BankService_Helper.DTO;
 
+    /// <summary>
+    /// Comunitacion manager unit test class
+    /// </summary>
     public class ComunicationManagerTest
     {
+        /// <summary>
+        /// GetBank data method test with valid result
+        /// </summary>
+        /// <returns></returns>
         [Test]
         public async Task GetBanksDataCorrectResultTest()
         {

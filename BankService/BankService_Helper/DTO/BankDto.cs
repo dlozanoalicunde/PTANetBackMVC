@@ -1,5 +1,8 @@
 ﻿namespace BankService_Helper.DTO
 {
+    /// <summary>
+    /// DTO class for bank entity
+    /// </summary>
     public class BankDto
     {
         public int Id { get; set; }

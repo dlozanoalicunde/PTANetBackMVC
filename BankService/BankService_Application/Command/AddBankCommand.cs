@@ -3,6 +3,9 @@
     using BankService_Helper.DTO;
     using MediatR;
 
+    /// <summary>
+    /// Add bank command request class
+    /// </summary>
     public class AddBankCommand : IRequest<bool>
     {
         public BankDto Bank { get; }

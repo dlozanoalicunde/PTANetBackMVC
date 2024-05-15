@@ -2,6 +2,9 @@
 {
     using BankService_Helper.DTO;
 
+    /// <summary>
+    /// Bank repository interface
+    /// </summary>
     public interface IBankRepository
     {
         Task<BankDto?> GetBy(int bankId);

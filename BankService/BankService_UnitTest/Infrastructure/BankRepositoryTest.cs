@@ -1,18 +1,23 @@
 ﻿namespace BankService_UnitTest.Infrastructure
 {
     using System;
-    using System.Xml;
     using BankService_Domain;
     using BankService_Domain.Models;
     using BankService_Helper.DTO;
     using BankService_Infrastructure.Repositories;
 
+    /// <summary>
+    /// Bank Repository unit test class
+    /// </summary>
     public class BankRepositoryTest
     {
         IBankRepository _bankRepository;
 
         BankDto _data;
 
+        /// <summary>
+        /// Setup method to init data values and property
+        /// </summary>
         [SetUp]
         public void Setup()
         {
@@ -26,6 +31,9 @@
             };
         }
 
+        /// <summary>
+        /// Add bank test with valid result
+        /// </summary>
         [Test]
         public void AddCorrectResultTest()
         {
@@ -44,6 +52,9 @@
             Assert.That(result, Is.True);
         }
 
+        /// <summary>
+        /// Add bank test with incorrect result
+        /// </summary>
         [Test]
         public void AddErrorResultTest()
         {
@@ -62,6 +73,9 @@
             Assert.That(result, Is.False);
         }
 
+        /// <summary>
+        /// Get By test with valid result
+        /// </summary>
         [Test]
         public void GetByCorrectResultTest()
         {
