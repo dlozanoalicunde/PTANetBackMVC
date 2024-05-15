@@ -18,6 +18,10 @@ C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\D
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\BankService_UnitTest.pdb
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\MediatR.dll
+C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\System.Web.Http.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
@@ -44,6 +48,7 @@ C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\D
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\NuGet.Frameworks.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\nunit.framework.dll
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -156,5 +161,3 @@ C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\obj\D
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\obj\Debug\net8.0\BankService_UnitTest.pdb
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\obj\Debug\net8.0\BankService_UnitTest.genruntimeconfig.cache
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\obj\Debug\net8.0\ref\BankService_UnitTest.dll
-C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\MediatR.dll
-C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\MediatR.Contracts.dll

@@ -37,5 +37,17 @@
 
             return Created(string.Empty, result);
         }
+
+        [HttpPost]
+        [Route("populate")]
+        [ProducesResponseType(typeof(bool), (int)HttpStatusCode.Created)]
+        public async Task<IActionResult> Populate()
+        {
+            bool result = await _mediator.Send(new PopulateBanksCommand(
+                                                        "https://api.opendata.esett.com", 
+                                                        "EXP06/Banks"));
+
+            return Created(string.Empty, result);
+        }
     }
 }
