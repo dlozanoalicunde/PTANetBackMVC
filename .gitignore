@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BankService/BankService_API/bin/Debug/net8.0
+/BankService/BankService_API/obj
+/BankService/BankService_Application/bin/Debug/net8.0
+/BankService/BankService_Application/obj
+/BankService/BankService_Domain/bin/Debug/net8.0
+/BankService/BankService_Domain/obj
+/BankService/BankService_Helper/bin/Debug/net8.0
+/BankService/BankService_Helper/obj
+/BankService/BankService_Infrastructure/bin/Debug/net8.0
+/BankService/BankService_Infrastructure/obj
