@@ -15,14 +15,16 @@
     public class BankController : Controller
     {
         private readonly IMediator _mediator;
+        private readonly ILogger _logger;
 
         /// <summary>
         /// Primary constructor
         /// </summary>
         /// <param name="mediator"></param>
-        public BankController(IMediator mediator)
+        public BankController(IMediator mediator, ILogger logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
         /// <summary>
@@ -35,9 +37,18 @@
         [ProducesResponseType(typeof(BankDto), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetBy([FromRoute]int id)
         {
-            BankDto? result = await _mediator.Send(new GetBankByIDQuery(id));
+            try
+            {
+                BankDto? result = await _mediator.Send(new GetBankByIDQuery(id));
 
-            return Ok(result);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error on GetBy method, {ex.Message}", DateTime.UtcNow.ToLongTimeString());
+
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>
@@ -50,9 +61,18 @@
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> Add([FromBody] BankDto data)
         {
-            bool result = await _mediator.Send(new AddBankCommand(data));
+            try
+            {
+                bool result = await _mediator.Send(new AddBankCommand(data));
 
-            return Created(string.Empty, result);
+                return Created(string.Empty, result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error on Add method, {ex.Message}", DateTime.UtcNow.ToLongTimeString());
+
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>
@@ -64,11 +84,21 @@
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> Populate()
         {
-            bool result = await _mediator.Send(new PopulateBanksCommand(
-                                                        "https://api.opendata.esett.com", 
+            try
+            {
+                bool result = await _mediator.Send(new PopulateBanksCommand(
+                                                        "https://api.opendata.esett.com",
                                                         "EXP06/Banks"));
 
-            return Created(string.Empty, result);
+                return Created(string.Empty, result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error on Populate method, {ex.Message}", 
+                                 DateTime.UtcNow.ToLongTimeString());
+
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

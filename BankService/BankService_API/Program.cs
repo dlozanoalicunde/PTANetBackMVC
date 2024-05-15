@@ -3,6 +3,8 @@ using BankService_Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Logging.ClearProviders().AddConsole();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
