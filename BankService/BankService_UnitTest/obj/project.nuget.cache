@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "5gn8BKzwV64yr28t5iQp7de+i353X2uqemBDas2XMS3MHfJfkvRb8Wg6M+45QTHTacAk52yFQ4lVOkxf6Hc7hg==",
+  "dgSpecHash": "Q511lO2XMkHyrXjqlyT2Mg6l7Qw/UbmQcqpDP/98PhVBAUce+A6kDcfNlMga8/Dm2dAzIcTKASwWNFNqA+iumA==",
   "success": true,
   "projectFilePath": "C:\\Users\\julio\\source\\repos\\PTANetBackMVC\\BankService\\BankService_UnitTest\\BankService_UnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\julio\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\julio\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\julio\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\julio\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\julio\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\julio\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\julio\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
     "C:\\Users\\julio\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

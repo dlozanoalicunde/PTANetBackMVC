@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BankService_Helper\BankService_Helper.csproj" />
     <ProjectReference Include="..\BankService_Infrastructure\BankService_Infrastructure.csproj" />
   </ItemGroup>

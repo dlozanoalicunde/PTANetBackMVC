@@ -156,3 +156,5 @@ C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\obj\D
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\obj\Debug\net8.0\BankService_UnitTest.pdb
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\obj\Debug\net8.0\BankService_UnitTest.genruntimeconfig.cache
 C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\obj\Debug\net8.0\ref\BankService_UnitTest.dll
+C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\MediatR.dll
+C:\Users\julio\source\repos\PTANetBackMVC\BankService\BankService_UnitTest\bin\Debug\net8.0\MediatR.Contracts.dll
