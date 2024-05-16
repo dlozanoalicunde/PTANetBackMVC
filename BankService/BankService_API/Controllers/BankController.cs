@@ -20,15 +20,17 @@ namespace BankService_API.Controllers
     {
         private readonly IMediator _mediator;
         private readonly ILogger _logger;
+        private readonly IConfiguration _configuration;
 
         /// <summary>
         /// Primary constructor
         /// </summary>
         /// <param name="mediator"></param>
-        public BankController(IMediator mediator, ILogger logger)
+        public BankController(IMediator mediator, ILogger logger, IConfiguration configuration)
         {
             _mediator = mediator;
             _logger = logger;
+            _configuration = configuration;
         }
 
         /// <summary>
@@ -91,8 +93,8 @@ namespace BankService_API.Controllers
             try
             {
                 bool result = await _mediator.Send(new PopulateBanksCommand(
-                                                        "https://api.opendata.esett.com",
-                                                        "EXP06/Banks"));
+                                                        _configuration.GetSection("BankSourceApiUrl").Value,
+                                                        _configuration.GetSection("EndpointPath").Value));
 
                 return Created(string.Empty, result);
             }
