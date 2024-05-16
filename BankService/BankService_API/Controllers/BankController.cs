@@ -51,7 +51,7 @@ namespace BankService_API.Controllers
             {
                 _logger.LogError($"Error on GetBy method, {ex.Message}", DateTime.UtcNow.ToLongTimeString());
 
-                return BadRequest(ex.Message);
+                return BadRequest("Unable to execute your action, please try again later");
             }
         }
 
@@ -75,7 +75,7 @@ namespace BankService_API.Controllers
             {
                 _logger.LogError($"Error on Add method, {ex.Message}", DateTime.UtcNow.ToLongTimeString());
 
-                return BadRequest(ex.Message);
+                return BadRequest("Unable to execute your action, please try again later");
             }
         }
 
@@ -101,7 +101,7 @@ namespace BankService_API.Controllers
                 _logger.LogError($"Error on Populate method, {ex.Message}", 
                                  DateTime.UtcNow.ToLongTimeString());
 
-                return BadRequest(ex.Message);
+                return BadRequest("Unable to execute your action, please try again later");
             }
         }
     }
