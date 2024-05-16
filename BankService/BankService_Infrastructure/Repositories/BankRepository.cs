@@ -16,16 +16,15 @@ namespace BankService_Infrastructure.Repositories
     /// </summary>
     public class BankRepository : IBankRepository
     {
-        private readonly BankservicedbMdfContext _dbContext;
+        private readonly BankservicedbMdfContext _dbContext = new();
 
         /// <summary>
         /// Primary constructor
         /// </summary>
         /// <param name="dbContext"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public BankRepository(BankservicedbMdfContext dbContext)
+        public BankRepository()
         {
-            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         /// <summary>
