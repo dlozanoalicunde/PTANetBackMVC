@@ -35,6 +35,7 @@ namespace BankService_Infrastructure.Repositories
         public async Task Add(BankDto bank)
         {
             await _dbContext.Banks.AddAsync(BankMapper.ToEntity(bank));
+            _dbContext .SaveChanges();
         }
 
         /// <summary>
