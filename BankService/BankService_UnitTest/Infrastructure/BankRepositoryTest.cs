@@ -25,7 +25,7 @@ namespace BankService_UnitTest.Infrastructure
         [SetUp]
         public void Setup()
         {
-            _bankRepository = new BankRepository(new BankservicedbMdfContext());
+            _bankRepository = new BankRepository();
 
             _data = new BankDto()
             {
