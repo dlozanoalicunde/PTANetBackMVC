@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CQRS",
+    "\\CQRS\\src",
+    "\\CQRS\\src\\CQRS.Infrastructure",
+    "\\CQRS\\src\\CQRS.Infrastructure\\Data",
+    "\\CQRS\\src\\CQRS.Infrastructure\\Data\\Context"
+  ],
+  "SelectedNode": "\\CQRS\\src\\CQRS.Infrastructure\\Data\\Context\\ApplicationDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}
