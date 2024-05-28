@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MBAOptionsManager.Model;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace MBAOptionsManager.Controllers
 {
@@ -45,6 +46,97 @@ namespace MBAOptionsManager.Controllers
             }).ToArray();
         }
 
+        // GET: api/MBAOptions/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<MBAOption>> GetMBAOption(int id)
+        {
+            var mbaOption = await _context.MBAOptions.Include(m => m.MBAs).FirstOrDefaultAsync(m => m.Id == id);
+
+            if (mbaOption == null)
+            {
+                return NotFound();
+            }
+
+            var mbaOptionDto = new MBAOption
+            {
+                Id = mbaOption.Id,
+                Country = mbaOption.Country,
+                CountryCode = mbaOption.CountryCode,
+                MBAs = mbaOption.MBAs.Select(m => new MBA
+                {
+                    Id = m.Id,
+                    Code = m.Code,
+                    Name = m.Name
+                }).ToList()
+            };
+
+            return mbaOptionDto;
+        }
+
+        // POST: api/MBAOptions
+        [HttpPost]
+        public async Task<ActionResult<MBAOption>> CreateMBAOption(ExternalMBAOption createMBAOptionDto)
+        {
+            var mbaOption = new MBAOption
+            {
+                Country = createMBAOptionDto.Country,
+                CountryCode = createMBAOptionDto.CountryCode,
+                MBAs = createMBAOptionDto.MBAs.Select(m => new MBA
+                {
+                    Code = m.Code,
+                    Name = m.Name
+                }).ToList()
+            };
+
+            _context.MBAOptions.Add(mbaOption);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetMBAOption), new { id = mbaOption.Id }, mbaOption);
+        }
+
+        // PUT: api/MBAOptions/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateMBAOption(int id, ExternalMBAOption updateMBAOptionDto)
+        {
+            var mbaOption = await _context.MBAOptions.Include(m => m.MBAs).FirstOrDefaultAsync(m => m.Id == id);
+
+            if (mbaOption == null)
+            {
+                return NotFound();
+            }
+
+            mbaOption.Country = updateMBAOptionDto.Country;
+            mbaOption.CountryCode = updateMBAOptionDto.CountryCode;
+            mbaOption.MBAs = updateMBAOptionDto.MBAs.Select(m => new MBA
+            {
+                Code = m.Code,
+                Name = m.Name,
+                MBAOptionId = mbaOption.Id
+            }).ToList();
+
+            _context.Entry(mbaOption).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        // DELETE: api/MBAOptions/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMBAOption(int id)
+        {
+            var mbaOption = await _context.MBAOptions.FindAsync(id);
+
+            if (mbaOption == null)
+            {
+                return NotFound();
+            }
+
+            _context.MBAOptions.Remove(mbaOption);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         [HttpPost("Import")]
         public async Task<IActionResult> ImportMBAOptions()
         {
@@ -76,20 +168,5 @@ namespace MBAOptionsManager.Controllers
 
             return Ok("Data imported successfully.");
         }
-
-        //[HttpGet(Name = "GetMbaOptionById")]
-        //public ActionResult<MBAOption> GetMbaOption(int id)
-        //{
-        //    MBAOption? result = default;
-        //    try
-        //    {
-        //        result = _context.MBAOptions.Where(x => x.Id == id).First();
-        //    }
-        //    catch (InvalidOperationException)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return result;
-        //}
     }
 }
