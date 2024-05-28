@@ -1,13 +1,13 @@
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace MBAOptionsManager.Model
 {
-    public class MBAOption
+    public class ExternalMBAOption
     {
-        public int Id { get; set; }
         public string Country { get; set; }
         public string CountryCode { get; set; }
+
         [JsonPropertyName("mbas")]
-        public List<MBA> MBAs { get; set; }
+        public List<ExternalMBA> MBAs { get; set; }
     }
 }
