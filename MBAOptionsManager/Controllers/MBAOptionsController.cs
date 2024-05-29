@@ -9,15 +9,6 @@ namespace MBAOptionsManager.Controllers
     [Route("[controller]")]
     public class MBAOptionsController : ControllerBase
     {
-        private static readonly string[] Countries = new[]
-        {
-            "Spain", "France", "Germany", "United Kingdom", "Portugal", "Italy"
-        };
-        private static readonly string[] CountryCodes = new[]
-        {
-            "ES", "FR", "DE", "GB", "PT", "IT"
-        };
-        private static readonly string pool = "abcdefghijklmnopqrstuvwxyz0123456789";
 
         private readonly ILogger<MBAOptionsController> _logger;
         private readonly ApplicationDbContext _context;
@@ -33,22 +24,13 @@ namespace MBAOptionsManager.Controllers
         [HttpGet(Name = "GetMBAOptions")]
         public IEnumerable<MBAOption> GetMbaOptions()
         {
-            Random.Shared.Next(0, Countries.Length);
-            return Enumerable.Range(0, 5).Select(index => new MBAOption
-            {
-                Country = Countries[index],
-                CountryCode = CountryCodes[index],
-                MBAs = Enumerable.Range(1, Random.Shared.Next(2, 5)).Select(index => new MBA
-                {
-                    Code = Guid.NewGuid().ToString(),
-                    Name = new string(Enumerable.Range(0, 10).Select(x => pool[Random.Shared.Next(0, pool.Length)]).ToArray())
-                }).ToList()
-            }).ToArray();
+            _logger.LogInformation("Queried MBA options");
+            return _context.MBAOptions;
         }
 
         // GET: api/MBAOptions/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<MBAOption>> GetMBAOption(int id)
+        public async Task<ActionResult<ExternalMBAOption>> GetMBAOption(int id)
         {
             var mbaOption = await _context.MBAOptions.Include(m => m.MBAs).FirstOrDefaultAsync(m => m.Id == id);
 
@@ -57,18 +39,17 @@ namespace MBAOptionsManager.Controllers
                 return NotFound();
             }
 
-            var mbaOptionDto = new MBAOption
+            var mbaOptionDto = new ExternalMBAOption
             {
-                Id = mbaOption.Id,
                 Country = mbaOption.Country,
                 CountryCode = mbaOption.CountryCode,
-                MBAs = mbaOption.MBAs.Select(m => new MBA
+                MBAs = mbaOption.MBAs.Select(m => new ExternalMBA
                 {
-                    Id = m.Id,
                     Code = m.Code,
                     Name = m.Name
                 }).ToList()
             };
+            _logger.LogInformation($"Queried MBA option with ID {mbaOption.Id}");
 
             return mbaOptionDto;
         }
@@ -90,6 +71,8 @@ namespace MBAOptionsManager.Controllers
 
             _context.MBAOptions.Add(mbaOption);
             await _context.SaveChangesAsync();
+
+            _logger.LogInformation($"Created new MBA option with ID {mbaOption.Id}");
 
             return CreatedAtAction(nameof(GetMBAOption), new { id = mbaOption.Id }, mbaOption);
         }
@@ -117,6 +100,9 @@ namespace MBAOptionsManager.Controllers
             _context.Entry(mbaOption).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
+
+            _logger.LogInformation($"Updated MBA option with ID {mbaOption.Id}");
+
             return NoContent();
         }
 
@@ -133,6 +119,9 @@ namespace MBAOptionsManager.Controllers
 
             _context.MBAOptions.Remove(mbaOption);
             await _context.SaveChangesAsync();
+
+
+            _logger.LogInformation($"Removed MBA option with ID {mbaOption.Id}");
 
             return NoContent();
         }
@@ -165,6 +154,9 @@ namespace MBAOptionsManager.Controllers
 
             _context.MBAOptions.AddRange(mbaOptions);
             await _context.SaveChangesAsync();
+
+
+            _logger.LogInformation($"Imported MBA options from external endpoint");
 
             return Ok("Data imported successfully.");
         }
