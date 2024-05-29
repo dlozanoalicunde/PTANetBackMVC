@@ -94,7 +94,8 @@ namespace MBAOptionsManager.Controllers
             {
                 Code = m.Code,
                 Name = m.Name,
-                MBAOptionId = mbaOption.Id
+                MBAOptionId = mbaOption.Id,
+                MBAOption = mbaOption
             }).ToList();
 
             _context.Entry(mbaOption).State = EntityState.Modified;
@@ -140,6 +141,8 @@ namespace MBAOptionsManager.Controllers
 
             var jsonResponse = await response.Content.ReadAsStringAsync();
             var externalMBAOptions = JsonSerializer.Deserialize<List<ExternalMBAOption>>(jsonResponse, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+
+            _context.MBAOptions.RemoveRange(_context.MBAOptions);
 
             var mbaOptions = externalMBAOptions.Select(option => new MBAOption
             {

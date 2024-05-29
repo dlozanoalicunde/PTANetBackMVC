@@ -8,10 +8,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["MBAOptionsManager.csproj", "."]
-COPY ["appsettings.json", "."]
-RUN dotnet restore "MBAOptionsManager.csproj"
+RUN dotnet restore "./MBAOptionsManager.csproj"
 COPY . .
-WORKDIR "/src/"
+WORKDIR "/src/."
 RUN dotnet build "MBAOptionsManager.csproj" -c Release -o /app/build
 
 FROM build AS publish

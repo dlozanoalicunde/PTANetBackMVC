@@ -1,0 +1,23 @@
+﻿version: '2.12'
+
+services:
+  mbaoptionsmanager:
+    image: mbaoptionsmanager
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+      - "49153:443"
+    depends_on:
+      - sqlserver
+    environment:
+      - ConnectionStrings__SqlServerPassword=${SQLSERVER_PASSWORD}
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: ${SQLSERVER_PASSWORD}
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
