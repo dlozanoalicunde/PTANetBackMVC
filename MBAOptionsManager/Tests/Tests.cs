@@ -75,7 +75,7 @@ namespace MBAOptionsManager.Tests
             var result = controller.GetMbaOptions();
 
             //Assert
-            Assert.NotEmpty(result);
+            Assert.NotEmpty(result.Result.Value);
         }
     }
 }

@@ -8,6 +8,6 @@ namespace MBAOptionsManager.Model
         public string Country { get; set; }
         public string CountryCode { get; set; }
         [JsonPropertyName("mbas")]
-        public List<MBA> MBAs { get; set; }
+        public virtual List<MBA> MBAs { get; set; }
     }
 }

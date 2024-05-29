@@ -14,7 +14,8 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<MBAOption>()
             .HasMany(m => m.MBAs)
             .WithOne(m => m.MBAOption)
-            .HasForeignKey(m => m.MBAOptionId);
+            .HasForeignKey(m => m.MBAOptionId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         base.OnModelCreating(modelBuilder);
     }

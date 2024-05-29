@@ -21,11 +21,23 @@ namespace MBAOptionsManager.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
+        // GET: api/MBAOptions
         [HttpGet(Name = "GetMBAOptions")]
-        public IEnumerable<MBAOption> GetMbaOptions()
+        public async Task<ActionResult<List<ExternalMBAOption>>> GetMbaOptions()
         {
             _logger.LogInformation("Queried MBA options");
-            return _context.MBAOptions;
+            var mbaOptionsDto = _context.MBAOptions.Select(option => new ExternalMBAOption
+            {
+                Id = option.Id,
+                Country = option.Country,
+                CountryCode = option.CountryCode,
+                MBAs = option.MBAs.Select(mba => new ExternalMBA
+                {
+                    Code = mba.Code,
+                    Name = mba.Name
+                }).ToList()
+            }).ToList();
+            return Ok(mbaOptionsDto);
         }
 
         // GET: api/MBAOptions/{id}
@@ -41,6 +53,7 @@ namespace MBAOptionsManager.Controllers
 
             var mbaOptionDto = new ExternalMBAOption
             {
+                Id = id,
                 Country = mbaOption.Country,
                 CountryCode = mbaOption.CountryCode,
                 MBAs = mbaOption.MBAs.Select(m => new ExternalMBA
@@ -55,6 +68,7 @@ namespace MBAOptionsManager.Controllers
         }
 
         // POST: api/MBAOptions
+        // Will ignore the supplied ID for the ExternalMBAOption
         [HttpPost]
         public async Task<ActionResult<MBAOption>> CreateMBAOption(ExternalMBAOption createMBAOptionDto)
         {
@@ -70,6 +84,7 @@ namespace MBAOptionsManager.Controllers
             };
 
             _context.MBAOptions.Add(mbaOption);
+            _context.MBAs.AddRange(mbaOption.MBAs);
             await _context.SaveChangesAsync();
 
             _logger.LogInformation($"Created new MBA option with ID {mbaOption.Id}");
@@ -78,10 +93,10 @@ namespace MBAOptionsManager.Controllers
         }
 
         // PUT: api/MBAOptions/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateMBAOption(int id, ExternalMBAOption updateMBAOptionDto)
+        [HttpPut]
+        public async Task<IActionResult> UpdateMBAOption(ExternalMBAOption updateMBAOptionDto)
         {
-            var mbaOption = await _context.MBAOptions.Include(m => m.MBAs).FirstOrDefaultAsync(m => m.Id == id);
+            var mbaOption = await _context.MBAOptions.Include(m => m.MBAs).FirstOrDefaultAsync(m => m.Id == updateMBAOptionDto.Id);
 
             if (mbaOption == null)
             {

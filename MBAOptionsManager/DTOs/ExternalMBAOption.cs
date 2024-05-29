@@ -4,6 +4,7 @@ namespace MBAOptionsManager.Model
 {
     public class ExternalMBAOption
     {
+        public int? Id { get; set; }
         public string Country { get; set; }
         public string CountryCode { get; set; }
 

@@ -6,6 +6,6 @@ namespace MBAOptionsManager.Model
         public string Code { get; set; }
         public string Name { get; set; }
         public int MBAOptionId { get; set; }
-        public MBAOption MBAOption { get; set; }
+        public virtual MBAOption MBAOption { get; set; }
     }
 }
