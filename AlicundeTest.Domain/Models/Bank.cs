@@ -24,4 +24,9 @@ public class Bank : Entity<Bank>
 
     [MaxLength(2)]
     public string Country { get; set; }
+
+    public static Bank CreateBank(string name, string bic, string country)
+    {
+        return new Bank(name, bic, country);
+    }
 }
