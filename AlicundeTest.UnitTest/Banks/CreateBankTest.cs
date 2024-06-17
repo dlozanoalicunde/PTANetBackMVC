@@ -27,5 +27,6 @@ internal class CreateBankTest
         bank.BIC.Should().Be(bic);
         bank.Country.Should().Be(country);
         bank.Id.Should().NotBeEmpty();
+        bank.CreationDateUtc.Should().BeSameDateAs(DateTime.UtcNow);
     }
 }
