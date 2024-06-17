@@ -1,6 +1,8 @@
-﻿namespace AlicundeTest.Persistence;
+﻿using AlicundeTest.Domain.Abstract;
 
-public class UnitOfWork
+namespace AlicundeTest.Persistence;
+
+public class UnitOfWork : IUnitOfWork
 {
     private readonly AlicundeTestDbContext _dbContext;
 
@@ -8,4 +10,9 @@ public class UnitOfWork
 
     public Task SaveChangesAsync(CancellationToken cancellationToken = default) =>
         _dbContext.SaveChangesAsync(cancellationToken);
+
+    public void Dispose()
+    {
+        _dbContext.Dispose();
+    }
 }

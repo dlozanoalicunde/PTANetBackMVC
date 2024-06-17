@@ -1,10 +1,10 @@
+using AlicundeTest.Persistence;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Reflection;
-using Microsoft.EntityFrameworkCore;
-using AlicundeTest.Persistence;
-using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Mvc;
+using AlicundeTest.API.Infraestructure;
+using AlicundeTest.Domain.Abstract;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +39,9 @@ builder.Services.AddDbContext<AlicundeTestDbContext>(optionsBuilder =>
     optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
 
+// Unit of work
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -67,5 +70,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action}/{id?}");
+
+// Seed and migrations
+app.ConfigureData();
 
 app.Run();

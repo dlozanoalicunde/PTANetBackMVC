@@ -22,7 +22,7 @@ public class Bank : Entity<Bank>
     [MaxLength(11)]
     public string BIC { get; set; }
 
-    [MaxLength(2)]
+    [MaxLength(7)]
     public string Country { get; set; }
 
     public static Bank CreateBank(string name, string bic, string country)

@@ -1,4 +1,5 @@
-﻿using AlicundeTest.Domain.Models;
+﻿using AlicundeTest.Domain.Abstract;
+using AlicundeTest.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AlicundeTest.Persistence;
