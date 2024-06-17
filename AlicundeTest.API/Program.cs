@@ -1,6 +1,10 @@
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using AlicundeTest.Persistence;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +31,12 @@ builder.Services.AddSwaggerGen(c =>
     string? xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     string? xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
+});
+
+// DbContext configuration
+builder.Services.AddDbContext<AlicundeTestDbContext>(optionsBuilder =>
+{
+    optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
 
 var app = builder.Build();
