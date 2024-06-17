@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlicundeTest.API", "AlicundeTest.API\AlicundeTest.API.csproj", "{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlicundeTest.API", "AlicundeTest.API\AlicundeTest.API.csproj", "{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlicundeTest.Domain", "AlicundeTest.Domain\AlicundeTest.Domain.csproj", "{15CD432F-F135-47A1-BF6C-88FE849F09B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CD432F-F135-47A1-BF6C-88FE849F09B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CD432F-F135-47A1-BF6C-88FE849F09B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CD432F-F135-47A1-BF6C-88FE849F09B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CD432F-F135-47A1-BF6C-88FE849F09B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
