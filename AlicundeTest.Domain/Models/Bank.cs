@@ -10,7 +10,7 @@ public class Bank : Entity<Bank>
     public Bank(string name, string bic, string country)
     {
         Id = Guid.NewGuid();
-        CreationDate = DateTime.Now;
+        CreationDateUtc = DateTime.UtcNow;
         Name = name;
         BIC = bic;
         Country = country;

@@ -15,5 +15,5 @@ public abstract class Entity<T> where T : Entity<T>
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public virtual Guid Id { get; set; }
 
-    public DateTime CreationDate { get; set; }
+    public DateTime CreationDateUtc { get; set; }
 }
