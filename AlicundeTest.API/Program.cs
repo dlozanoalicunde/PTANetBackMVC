@@ -71,7 +71,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action}/{id?}");
 
-// Seed and migrations
-app.ConfigureData();
+app.DatabaseConfiguration();
 
 app.Run();

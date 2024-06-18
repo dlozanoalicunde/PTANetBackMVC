@@ -4,5 +4,23 @@
         <name>AlicundeTest.API</name>
     </assembly>
     <members>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.SeedDatabase(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Database initial data
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.ApplyMigrations(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Applies migrations
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.EnsureDatabase(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            If the DB does not exist, it is created
+            </summary>
+            <param name="app"></param>
+        </member>
     </members>
 </doc>

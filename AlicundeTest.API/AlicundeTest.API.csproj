@@ -26,4 +26,8 @@
     <ProjectReference Include="..\AlicundeTest.Persistence\AlicundeTest.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
 </Project>
