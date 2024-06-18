@@ -5,6 +5,9 @@ using Serilog;
 using System.Reflection;
 using AlicundeTest.API.Infraestructure;
 using AlicundeTest.Domain.Abstract;
+using AlicundeTest.Application.Banks.Queries.GetBank;
+using AlicundeTest.Domain.Repositories;
+using AlicundeTest.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +41,12 @@ builder.Services.AddDbContext<AlicundeTestDbContext>(optionsBuilder =>
 {
     optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
+
+// Mediator
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetBankHandler).Assembly));
+
+// Respositories
+builder.Services.AddTransient<IBanksRepository, BanksRepository>();
 
 // Unit of work
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

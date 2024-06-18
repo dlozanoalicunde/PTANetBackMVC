@@ -5,7 +5,7 @@ using MediatR;
 
 namespace AlicundeTest.Application.Banks.Queries.GetBanks;
 
-public class GetBanksHandler : IRequestHandler<GetBanksRequest, List<Bank>>
+public class GetBanksHandler : IRequestHandler<GetBanksRequest, ErrorOr<List<Bank>>>
 {
     private readonly IBanksRepository _banksRepository;
 
@@ -14,7 +14,7 @@ public class GetBanksHandler : IRequestHandler<GetBanksRequest, List<Bank>>
         _banksRepository = banksRepository;
     }
 
-    public async Task<List<Bank>> Handle(GetBanksRequest request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<List<Bank>>> Handle(GetBanksRequest request, CancellationToken cancellationToken)
     {
         var bank = await _banksRepository.GetAll(cancellationToken);
 

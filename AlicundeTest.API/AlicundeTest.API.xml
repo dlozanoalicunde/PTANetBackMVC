@@ -4,7 +4,7 @@
         <name>AlicundeTest.API</name>
     </assembly>
     <members>
-        <member name="M:AlicundeTest.API.Controllers.BanksController.#ctor(Microsoft.Extensions.Logging.ILogger{AlicundeTest.API.Controllers.BanksController})">
+        <member name="M:AlicundeTest.API.Controllers.BanksController.#ctor(Microsoft.Extensions.Logging.ILogger{AlicundeTest.API.Controllers.BanksController},MediatR.IMediator)">
             <summary>
             Constructor
             </summary>
