@@ -14,8 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Queries\Banks\GetBank\" />
-    <Folder Include="Queries\Banks\GetBanks\" />
+    <Folder Include="Banks\Queries\GetBanks\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlicundeTest.Domain\AlicundeTest.Domain.csproj" />
   </ItemGroup>
 
 </Project>
