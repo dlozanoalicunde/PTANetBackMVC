@@ -41,7 +41,7 @@
             </summary>
             <param name="app"></param>
         </member>
-        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.EnsureDatabase(Microsoft.AspNetCore.Builder.WebApplication)">
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.DatabaseExists(Microsoft.AspNetCore.Builder.WebApplication)">
             <summary>
             If the DB does not exist, it is created
             </summary>
@@ -55,6 +55,13 @@
             <param name="configuration"></param>
             <returns></returns>
             <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.SerilogConfiguration.ConfigureSerilog(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>
+            Serilog custom configuration
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
         </member>
         <member name="M:AlicundeTest.API.Infraestructure.ServicesConfiguration.CustomServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>

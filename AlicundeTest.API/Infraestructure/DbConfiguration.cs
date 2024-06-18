@@ -15,7 +15,7 @@ public static class DbConfiguration
     /// <param name="app"></param>
     public static WebApplication DatabaseInitialization(this WebApplication app)
     {
-        EnsureDatabase(app);
+        DatabaseExists(app);
         ApplyMigrations(app);
         SeedDatabase(app);
 
@@ -40,7 +40,7 @@ public static class DbConfiguration
             try
             {
                 logger.LogInformation("Seeding database...");
-                await InitialSeed.Seed(context, unitOfWork);
+                await InitialSeed.Seed(context, unitOfWork, logger);
                 logger.LogInformation("Seeding completed");
             }
             catch (Exception ex)
@@ -63,22 +63,9 @@ public static class DbConfiguration
 
         if (context.Database.HasPendingModelChanges())
         {
-            logger.LogInformation("Database model has pending changes");
-            try
-            {
-                logger.LogInformation("Applying changes...");
-                context.Database.EnsureCreated();
-                logger.LogInformation("Changes applied");
-            }
-            catch (Exception ex)
-            {
-                logger.LogError(ex.InnerException, "Error applying changes: ");
-                throw;
-            }
-        }
-        else
-        {
-            logger.LogInformation("No pending DB model changes");
+            string errorMessage = "Database model has pending migrations, apply _update_database.ps1";
+            logger.LogError(errorMessage);
+            throw new InvalidOperationException(errorMessage);
         }
     }
 
@@ -86,7 +73,7 @@ public static class DbConfiguration
     /// If the DB does not exist, it is created
     /// </summary>
     /// <param name="app"></param>
-    public static void EnsureDatabase(WebApplication app)
+    public static void DatabaseExists(WebApplication app)
     {
         using var scope = app.Services.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<AlicundeTestDbContext>();
@@ -94,22 +81,9 @@ public static class DbConfiguration
 
         if (!context.Database.CanConnect())
         {
-            logger.LogInformation("Database does not exist");
-            try
-            {
-                logger.LogInformation("Creating database...");
-                context.Database.EnsureCreated();
-                logger.LogInformation("Database created");
-            }
-            catch (Exception ex)
-            {
-                logger.LogError(ex.InnerException, "Error creating database: ");
-                throw;
-            }
-        }
-        else
-        {
-            logger.LogInformation("Database exists");
+            string errorMessage = "Database does not exists, apply _update_database.ps1";
+            logger.LogError(errorMessage);
+            throw new InvalidOperationException(errorMessage);
         }
     }
 

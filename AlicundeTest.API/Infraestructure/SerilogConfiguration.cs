@@ -6,6 +6,11 @@ namespace AlicundeTest.API.Infraestructure;
 
 public static class SerilogConfiguration
 {
+    /// <summary>
+    /// Serilog custom configuration
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <returns></returns>
     public static WebApplicationBuilder ConfigureSerilog(this WebApplicationBuilder builder)
     {
         builder.Host.UseSerilog((context, services, configuration) => configuration
