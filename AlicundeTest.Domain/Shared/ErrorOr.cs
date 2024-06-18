@@ -21,6 +21,9 @@ public sealed class ErrorOr<T>
         this.error = error;
     }
 
+    public T? Value => value;
+    public string? Error => error;
+
     public bool IsSuccess => error is null;
     public bool IsFailure => error is not null;
 
