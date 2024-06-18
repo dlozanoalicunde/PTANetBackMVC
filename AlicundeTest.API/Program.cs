@@ -44,6 +44,8 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
+Log.Information("App starting...");
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
