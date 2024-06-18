@@ -8,7 +8,7 @@ namespace AlicundeTest.Persistence.Seeds;
 public class InitialSeed
 {
     /// <summary>
-    /// 
+    /// Gets the data from endpoint and seeds the DB
     /// </summary>
     /// <param name="context"></param>
     /// <param name="unitOfWork"></param>

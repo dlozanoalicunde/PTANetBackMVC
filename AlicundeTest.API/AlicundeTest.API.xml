@@ -4,6 +4,25 @@
         <name>AlicundeTest.API</name>
     </assembly>
     <members>
+        <member name="M:AlicundeTest.API.Controllers.BanksController.#ctor(Microsoft.Extensions.Logging.ILogger{AlicundeTest.API.Controllers.BanksController})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger">Instancia de log</param>
+        </member>
+        <member name="M:AlicundeTest.API.Controllers.BanksController.Get(System.Guid)">
+            <summary>
+            Gets a bank by id.
+            </summary>
+            <param name="id">Unique bank identifier</param>
+            <returns>Bank</returns>
+        </member>
+        <member name="M:AlicundeTest.API.Controllers.BanksController.GetAll">
+            <summary>
+            Gets all banks
+            </summary>
+            <returns>List of banks</returns>
+        </member>
         <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.SeedDatabase(Microsoft.AspNetCore.Builder.WebApplication)">
             <summary>
             Database initial data
