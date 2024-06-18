@@ -1,5 +1,9 @@
 ﻿namespace AlicundeTest.Domain.Shared;
 
+/// <summary>
+/// Simple response object with error handling 
+/// </summary>
+/// <typeparam name="T">Return object</typeparam>
 public sealed class ErrorOr<T>
 {
     private readonly T? value;
@@ -23,9 +27,23 @@ public sealed class ErrorOr<T>
     public T? GetValueOrDefault() => value;
     public string? GetError() => error;
 
+    /// <summary>
+    /// Creation method providing value
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
     public static ErrorOr<T> FromValue(T value) => new ErrorOr<T>(value);
+    /// <summary>
+    /// Creation method providing error
+    /// </summary>
+    /// <param name="error"></param>
+    /// <returns></returns>
     public static ErrorOr<T> FromError(string error) => new ErrorOr<T>(error);
 
+    /// <summary>
+    /// Implicit operator for conversion
+    /// </summary>
+    /// <param name="errorOr"></param>
     public static implicit operator T(ErrorOr<T> errorOr)
     {
         if (errorOr.IsSuccess)
@@ -38,5 +56,9 @@ public sealed class ErrorOr<T>
         }
     }
 
+    /// <summary>
+    /// Custom ToString method for logger
+    /// </summary>
+    /// <returns></returns>
     public override string ToString() => IsSuccess ? $"Success: {value}" : $"Error: {error}";
 }
