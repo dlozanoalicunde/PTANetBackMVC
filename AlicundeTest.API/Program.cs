@@ -1,55 +1,23 @@
-using AlicundeTest.Persistence;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using Serilog;
-using System.Reflection;
 using AlicundeTest.API.Infraestructure;
-using AlicundeTest.Domain.Abstract;
-using AlicundeTest.Application.Banks.Queries.GetBank;
-using AlicundeTest.Domain.Repositories;
-using AlicundeTest.Persistence.Repositories;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
 // Serilog configuration with settings
-builder.Host.UseSerilog((context, services, configuration) => configuration
-    .ReadFrom.Configuration(context.Configuration)
-    .ReadFrom.Services(services));
+builder.ConfigureSerilog();
 
-// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-// Swagger configuration
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "AlicundeTest API",
-        Description = "Alicunde coding test",
-        Version = "v1",
-    });
-
-    // Documentation configuration
-    string? xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    string? xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    c.IncludeXmlComments(xmlPath);
-});
-
 // DbContext configuration
-builder.Services.AddDbContext<AlicundeTestDbContext>(optionsBuilder =>
-{
-    optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-});
+builder.Services.ConfigureDbContext(configuration);
 
-// Mediator
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetBankHandler).Assembly));
+// Swagger configuration
+builder.Services.AddCustomSwagger();
 
-// Respositories
-builder.Services.AddTransient<IBanksRepository, BanksRepository>();
-
-// Unit of work
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+// Mediator, repository and UnitOfWork
+builder.Services.CustomServices();
 
 var app = builder.Build();
 
@@ -64,24 +32,17 @@ if (!app.Environment.IsDevelopment())
 else
 {
     // Adding swagger middleware
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AlicundeTest API V1");
-        c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
-    });
+    app.UseCustomSwagger();
 }
 
 app.UseHttpsRedirection();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action}/{id?}");
 
-app.DatabaseConfiguration();
+//Database initializations
+app.DatabaseInitialization();
 
 app.Run();

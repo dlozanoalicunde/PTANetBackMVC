@@ -23,6 +23,12 @@
             </summary>
             <returns>List of banks</returns>
         </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.DatabaseInitialization(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Method that esures DB creation, applies the last migrations and seeds DB
+            </summary>
+            <param name="app"></param>
+        </member>
         <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.SeedDatabase(Microsoft.AspNetCore.Builder.WebApplication)">
             <summary>
             Database initial data
@@ -38,6 +44,35 @@
         <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.EnsureDatabase(Microsoft.AspNetCore.Builder.WebApplication)">
             <summary>
             If the DB does not exist, it is created
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.ConfigureDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            SQL Server configuration for EF Core using default ConnectionString from user secrets
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.ServicesConfiguration.CustomServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Custom contracts for DP and MediatR
+            </summary>
+            <param name="services">IServiceCollection</param>
+            <returns>IServiceCollection</returns>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.SwaggerConfiguration.AddCustomSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Swagger custom configuration
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.SwaggerConfiguration.UseCustomSwagger(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Adding swagger middleware
             </summary>
             <param name="app"></param>
         </member>
