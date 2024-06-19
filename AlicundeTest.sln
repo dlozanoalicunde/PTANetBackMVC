@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlicundeTest.UnitTest", "Al
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlicundeTest.Application", "AlicundeTest.Application\AlicundeTest.Application.csproj", "{F89FF188-ACB6-40BF-9602-478A59634D65}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F89FF188-ACB6-40BF-9602-478A59634D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F89FF188-ACB6-40BF-9602-478A59634D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F89FF188-ACB6-40BF-9602-478A59634D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
