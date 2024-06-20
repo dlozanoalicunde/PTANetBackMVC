@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlicundeTest.API", "AlicundeTest.API\AlicundeTest.API.csproj", "{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlicundeTest.Domain", "AlicundeTest.Domain\AlicundeTest.Domain.csproj", "{15CD432F-F135-47A1-BF6C-88FE849F09B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlicundeTest.Persistence", "AlicundeTest.Persistence\AlicundeTest.Persistence.csproj", "{8063544B-42E1-42DE-951F-56434AC8E4C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlicundeTest.UnitTest", "AlicundeTest.UnitTest\AlicundeTest.UnitTest.csproj", "{E949BF6A-D56A-43EC-8C7F-3136CB46D6DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlicundeTest.Application", "AlicundeTest.Application\AlicundeTest.Application.csproj", "{F89FF188-ACB6-40BF-9602-478A59634D65}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFC41A5-CCAA-444F-AF06-F2C80E4E7D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CD432F-F135-47A1-BF6C-88FE849F09B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CD432F-F135-47A1-BF6C-88FE849F09B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CD432F-F135-47A1-BF6C-88FE849F09B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CD432F-F135-47A1-BF6C-88FE849F09B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8063544B-42E1-42DE-951F-56434AC8E4C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8063544B-42E1-42DE-951F-56434AC8E4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8063544B-42E1-42DE-951F-56434AC8E4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8063544B-42E1-42DE-951F-56434AC8E4C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E949BF6A-D56A-43EC-8C7F-3136CB46D6DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E949BF6A-D56A-43EC-8C7F-3136CB46D6DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E949BF6A-D56A-43EC-8C7F-3136CB46D6DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E949BF6A-D56A-43EC-8C7F-3136CB46D6DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89FF188-ACB6-40BF-9602-478A59634D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89FF188-ACB6-40BF-9602-478A59634D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89FF188-ACB6-40BF-9602-478A59634D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89FF188-ACB6-40BF-9602-478A59634D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F4FD9E-4A59-4AA1-BC9E-5E8300119317}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B1FF136-2F93-43D4-ACCC-80B98634D1F0}
+	EndGlobalSection
+EndGlobal

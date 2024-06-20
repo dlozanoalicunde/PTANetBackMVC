@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  alicundetest.api:
+    image: ${DOCKER_REGISTRY-}alicundetestapi
+    build:
+      context: .
+      dockerfile: AlicundeTest.API/Dockerfile
+    ports:
+        - "5039:5039"
+        - "7150:7150"
+    environment:
+        - Container=true #Sets environment variable to pick the correct connection string
+    depends_on:
+        - alicundeTest.database
+
+  alicundeTest.database:
+    image: mcr.microsoft.com/mssql/server:latest #Sql server latest
+    container_name: alicundeTest.database
+    env_file:
+      - variables.env #File with secrets
+    ports:
+      - "1433:1433" #Ports mapping

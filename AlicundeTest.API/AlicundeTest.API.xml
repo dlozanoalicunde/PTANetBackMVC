@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AlicundeTest.API</name>
+    </assembly>
+    <members>
+        <member name="M:AlicundeTest.API.Controllers.BanksController.#ctor(Microsoft.Extensions.Logging.ILogger{AlicundeTest.API.Controllers.BanksController},MediatR.IMediator)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger">Instancia de log</param>
+        </member>
+        <member name="M:AlicundeTest.API.Controllers.BanksController.Get(System.Guid)">
+            <summary>
+            Gets a bank by id.
+            </summary>
+            <param name="id">Unique bank identifier</param>
+            <returns>Bank</returns>
+        </member>
+        <member name="M:AlicundeTest.API.Controllers.BanksController.GetAll">
+            <summary>
+            Gets all banks
+            </summary>
+            <returns>List of banks</returns>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.DatabaseInitialization(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Method that esures DB creation, applies the last migrations and seeds DB
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.SeedDatabase(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Database initial data
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.ApplyMigrations(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Applies migrations
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.DatabaseExists(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            If the DB does not exist, it is created
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.ConfigureDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            SQL Server configuration for EF Core using connection string for containers or dotnet cli
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.SerilogConfiguration.ConfigureSerilog(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>
+            Serilog custom configuration
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.ServicesConfiguration.CustomServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Custom contracts for DP and MediatR
+            </summary>
+            <param name="services">IServiceCollection</param>
+            <returns>IServiceCollection</returns>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.SwaggerConfiguration.AddCustomSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Swagger custom configuration
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlicundeTest.API.Infraestructure.SwaggerConfiguration.UseCustomSwagger(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Adding swagger middleware
+            </summary>
+            <param name="app"></param>
+        </member>
+    </members>
+</doc>
