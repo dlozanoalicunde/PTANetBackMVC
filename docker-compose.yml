@@ -9,6 +9,8 @@ services:
     ports:
         - "5039:5039"
         - "7150:7150"
+    environment:
+        - Container=true #Sets environment variable to pick the correct connection string
     depends_on:
         - alicundeTest.database
 

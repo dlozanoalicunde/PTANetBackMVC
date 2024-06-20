@@ -49,7 +49,7 @@
         </member>
         <member name="M:AlicundeTest.API.Infraestructure.DbConfiguration.ConfigureDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
-            SQL Server configuration for EF Core using default ConnectionString from user secrets
+            SQL Server configuration for EF Core using connection string for containers or dotnet cli
             </summary>
             <param name="services"></param>
             <param name="configuration"></param>

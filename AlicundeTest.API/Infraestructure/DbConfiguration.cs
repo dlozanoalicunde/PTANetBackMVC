@@ -88,7 +88,7 @@ public static class DbConfiguration
     }
 
     /// <summary>
-    /// SQL Server configuration for EF Core using default ConnectionString from user secrets
+    /// SQL Server configuration for EF Core using connection string for containers or dotnet cli
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configuration"></param>
@@ -96,14 +96,23 @@ public static class DbConfiguration
     /// <exception cref="InvalidOperationException"></exception>
     public static IServiceCollection ConfigureDbContext(this IServiceCollection services, IConfiguration configuration)
     {
-        if (configuration.GetConnectionString("Default").IsNullOrEmpty())
+        string databaseStringName = "Default";
+        string connectionString;
+
+        if (Environment.GetEnvironmentVariable("Container") == "true")
         {
-            throw new InvalidOperationException("Default ConnectionString not configured");
+            databaseStringName = "Container";
         }
+
+        if (configuration.GetConnectionString(databaseStringName).IsNullOrEmpty())
+        {
+            throw new InvalidOperationException($"{databaseStringName} ConnectionString not configured");
+        }
+        connectionString = configuration.GetConnectionString(databaseStringName);
 
         services.AddDbContext<AlicundeTestDbContext>(optionsBuilder =>
         {
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("Default"));
+            optionsBuilder.UseSqlServer(connectionString);
         });
 
         return services;
