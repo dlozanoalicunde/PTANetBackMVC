@@ -1,0 +1,7 @@
+C:\Users\lgomgonz\source\repos\PTANetBackMVC\WebApplication\WebApplication\obj\Debug\net8.0\WebApplication.csproj.AssemblyReference.cache
+C:\Users\lgomgonz\source\repos\PTANetBackMVC\WebApplication\WebApplication\obj\Debug\net8.0\WebApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lgomgonz\source\repos\PTANetBackMVC\WebApplication\WebApplication\obj\Debug\net8.0\WebApplication.AssemblyInfoInputs.cache
+C:\Users\lgomgonz\source\repos\PTANetBackMVC\WebApplication\WebApplication\obj\Debug\net8.0\WebApplication.AssemblyInfo.cs
+C:\Users\lgomgonz\source\repos\PTANetBackMVC\WebApplication\WebApplication\obj\Debug\net8.0\WebApplication.csproj.CoreCompileInputs.cache
+C:\Users\lgomgonz\source\repos\PTANetBackMVC\WebApplication\WebApplication\obj\Debug\net8.0\WebApplication.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\lgomgonz\source\repos\PTANetBackMVC\WebApplication\WebApplication\obj\Debug\net8.0\WebApplication.MvcApplicationPartsAssemblyInfo.cache
