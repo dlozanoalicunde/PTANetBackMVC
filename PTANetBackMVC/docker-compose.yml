@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  administrationapi:
+    image: administrationapi
+    build:
+      context: .
+      dockerfile: AdministrationAPI/Dockerfile
+    ports:
+      - "8080:80"
+    links:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server={SERVER};Database={DATABASE};User={USER};Password={PASSWORD};TrustServerCertificate=true;      
+      
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: ${CONNECTIONSECRETS_PASSWORD}
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+
+volumes:
+  sqlserverdata:
