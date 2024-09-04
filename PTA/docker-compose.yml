@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  pta.api:
+    image: ${DOCKER_REGISTRY-}ptaapi
+    build:
+      context: .
+      dockerfile: PTA.API/Dockerfile
+  
+  sqlserverdb:
+    # environment:
+    #   ACCEPT_EULA: "1"
+    #   SA_PASSWORD: "FSGyKJrg2u7MnhXs"
+    # image: mcr.microsoft.com/azure-sql-edge:latest
+    restart: always
+    container_name: azure-sql
+    build: ./ScriptDB
+    ports:
+      - "1433:1433"
