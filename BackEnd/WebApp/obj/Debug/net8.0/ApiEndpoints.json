@@ -1,0 +1,80 @@
+[
+  {
+    "ContainingType": "WebApp.Controllers.BalanceServiceProvidersController",
+    "Method": "PutBalanceServiceProviders",
+    "RelativePath": "api/BalanceServiceProviders",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "balance",
+        "Type": "WebApp.Models.BalanceServiceProviders",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.BalanceServiceProvidersController",
+    "Method": "PostBalanceServiceProviders",
+    "RelativePath": "api/BalanceServiceProviders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[WebApp.Models.BalanceServiceProviders, WebApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApp.Controllers.BalanceServiceProvidersController",
+    "Method": "GetBalanceServiceProviders",
+    "RelativePath": "api/BalanceServiceProviders/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebApp.Models.BalanceServiceProviders",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApp.Controllers.BalanceServiceProvidersController",
+    "Method": "DeleteBalanceServiceProviders",
+    "RelativePath": "api/BalanceServiceProviders/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
